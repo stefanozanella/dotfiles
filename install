@@ -4,8 +4,9 @@ stow=`which stow`
 stow_root=`dirname $0`
 stow_pkgs=`find ${stow_root} -type d -depth 1 -not -name ".*" -exec basename {} \;`
 
-pushd ${stow_root}
+pushd ${stow_root} 2&> /dev/null
 for pkg in ${stow_pkgs}; do
+  echo "Installing ${pkg}"
   ${stow} ${pkg}
 done
-popd
+popd 2&> /dev/null
