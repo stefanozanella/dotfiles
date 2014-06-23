@@ -35,7 +35,7 @@ export GREP_COLOR='1;32'
 export GREP_OPTIONS=--color=auto
 
 ## Keybinding
-bindkey -v
+bindkey -e
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 # TODO: forward search, move between words, set word separators
