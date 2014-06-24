@@ -88,7 +88,7 @@ __git_status() {
 
     if $(echo "$index" | grep '^?? ' &> /dev/null); then
       color=196
-    elif $(echo "$index" | grep '^ M ' &> /dev/null); then
+    elif $(echo "$index" | grep -e '^\s*[MA] ' &> /dev/null); then
       color=202
     fi
   else
