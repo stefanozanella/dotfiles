@@ -102,7 +102,7 @@ __git_status() {
     staging_color=234
   fi
 
-  echo "%F{$staging_color}✈︎%f %F{236}∙%f %F{$edit_color}•%f"
+  echo "%F{$staging_color}%{✈︎%G%}%f %F{236}∙%f %F{$edit_color}•%f"
 }
 
 RPROMPT=' $(__ruby) %F{236}∙%f $(__last_exit_status)'
