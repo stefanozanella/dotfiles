@@ -84,18 +84,25 @@ __git_status() {
   index=$(git status --porcelain 2> /dev/null)
 
   if [ $? -eq 0 ]; then
-    color=46
+    edit_color=46
+    staging_color=46
 
     if $(echo "$index" | grep '^?? ' &> /dev/null); then
-      color=196
-    elif $(echo "$index" | grep -e '^\s*[MA] ' &> /dev/null); then
-      color=202
+      edit_color=196
+      staging_color=202
+    elif $(echo "$index" | grep '^\s*[MA] ' &> /dev/null); then
+      edit_color=202
+
+      if $(echo "$index" | grep '^ [MA] ' &> /dev/null); then
+        staging_color=202
+      fi
     fi
   else
-    color=234
+    edit_color=234
+    staging_color=234
   fi
 
-  echo "%F{$color}•%f"
+  echo "%F{$staging_color}✈︎%f %F{236}∙%f %F{$edit_color}•%f"
 }
 
 RPROMPT=' $(__ruby) %F{236}∙%f $(__last_exit_status)'
