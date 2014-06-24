@@ -26,6 +26,9 @@ set sw=2
 set expandtab
 set splitright
 set splitbelow
+set ruler
+set wrap
+set textwidth=80
 
 colorscheme jellybeans
 set t_Co=256
