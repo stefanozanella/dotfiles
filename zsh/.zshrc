@@ -107,12 +107,3 @@ __git_status() {
 
 RPROMPT=' $(__ruby) %F{236}∙%f $(__last_exit_status)'
 PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{195}%~ %{⇢%G%}%f  '
-
-
-# TODO Remove
-ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab oris}
-function spectrum_ls() {
-  for code in {000..255}; do
-    print -P -- "$code: %F{$code}$ZSH_SPECTRUM_TEXT%f"
-  done
-}
