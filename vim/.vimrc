@@ -11,6 +11,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 
