@@ -30,6 +30,7 @@ set splitbelow
 set ruler
 set wrap
 set textwidth=80
+set relativenumber
 
 colorscheme jellybeans
 set t_Co=256
