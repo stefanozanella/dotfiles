@@ -1,5 +1,6 @@
-## Hook in Boxen
-source /opt/boxen/env.sh
+## Hook in chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 ## Eh...
 alias vi='vim'
@@ -107,8 +108,3 @@ __git_status() {
 
 RPROMPT=' $(__ruby) %F{236}∙%f $(__last_exit_status)'
 PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{195}%~ %{⇢%G%}%f  '
-
-# Increasing max number of open file descriptors is necessary for running tests
-# in the engine project.
-ulimit -S -n 2048
-ulimit -S -u 2048
