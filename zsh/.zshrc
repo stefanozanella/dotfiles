@@ -1,5 +1,6 @@
-## Hook in Boxen
-source /opt/boxen/env.sh
+## Hook in chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 ## Eh...
 alias vi='vim'
