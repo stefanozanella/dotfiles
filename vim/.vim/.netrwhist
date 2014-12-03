@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/opt/boxen/repo/modules/sponsorpay/manifests'
-let g:netrw_dirhist_2='/Users/stefano/code/sbl/lib/sbl'
-let g:netrw_dirhist_3='/Users/stefano/code/ofw/app/controllers'
-let g:netrw_dirhist_4='/Users/stefano/code/ofw/app/controllers/mobile'
