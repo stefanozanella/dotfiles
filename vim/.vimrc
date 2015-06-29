@@ -13,6 +13,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 Plugin 'fatih/vim-go'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
