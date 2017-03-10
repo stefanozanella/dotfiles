@@ -42,3 +42,6 @@ set nu
 
 " Purge from trailing whitespaces
 autocmd FileType ruby,puppet,c,cpp,javascript,sql autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Enable JSX syntax highlighting also on normal .js files
+let g:jsx_ext_required = 0
