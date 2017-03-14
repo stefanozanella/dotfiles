@@ -16,6 +16,7 @@ Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'hail2u/vim-css3-syntax'
 
 call vundle#end()
 
