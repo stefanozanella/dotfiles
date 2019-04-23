@@ -17,6 +17,9 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'vim-airline/vim-airline'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'JuliaEditorSupport/julia-vim'
 
 call vundle#end()
 
@@ -46,3 +49,4 @@ autocmd FileType ruby,puppet,c,cpp,javascript,sql autocmd BufWritePre <buffer> :
 
 " Enable JSX syntax highlighting also on normal .js files
 let g:jsx_ext_required = 0
+set laststatus=2

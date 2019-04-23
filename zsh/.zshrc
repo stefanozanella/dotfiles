@@ -111,3 +111,8 @@ PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{195}%~ %{�
 
 export GOPATH=~/code/go
 export PATH=$PATH:$GOPATH/bin
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
