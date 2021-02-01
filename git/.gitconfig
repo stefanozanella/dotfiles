@@ -3,3 +3,4 @@
 	email = zanella.stefano@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
