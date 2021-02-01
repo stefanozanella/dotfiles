@@ -1,6 +1,9 @@
 [user]
 	name = Stefano Zanella
 	email = zanella.stefano@gmail.com
+  signingkey = FC07AC5C
+[commit]
+  gpgsign = true
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
