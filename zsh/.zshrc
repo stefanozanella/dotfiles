@@ -62,7 +62,7 @@ __ruby() {
 __git_branch() {
   ref=$(git symbolic-ref --short HEAD 2> /dev/null)
 
-  if [[ $ref == "master" ]]; then
+  if [[ $ref == "main" ]]; then
     color=118
   else
     color=33
