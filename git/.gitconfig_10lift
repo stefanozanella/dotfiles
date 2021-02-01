@@ -1,6 +1,6 @@
 [user]
 	name = Stefano Zanella
 	email = stefano@10lift.com
-  signignkey = A4B98C4C
+  signingkey = A4B98C4C
 [commit]
   gpgsign = true
