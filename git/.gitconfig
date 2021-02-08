@@ -7,6 +7,3 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-; 10lift related customized configuration
-[includeIf "gitdir:10lift/"]
-  path = ~/.gitconfig_10lift
