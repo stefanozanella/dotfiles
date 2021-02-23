@@ -1,0 +1,6 @@
+[user]
+  name = Stefano Zannella
+  email = stefano@balanced.family
+  signingkey = 8F3DEEA2
+[commit]
+  gpgsign = true
