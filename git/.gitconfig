@@ -8,5 +8,7 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 ; Configuration for Balanced Family related contributions
-[includeIf "gitdir:balanced.family/"]
+[includeIf "gitdir:BalancedFamily/"]
   path = ~/.gitconfig_balanced.family
+[init]
+	defaultBranch = main
