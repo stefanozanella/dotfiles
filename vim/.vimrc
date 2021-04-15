@@ -20,6 +20,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'vim-airline/vim-airline'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'udalov/kotlin-vim'
 
 call vundle#end()
 
