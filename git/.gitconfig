@@ -10,5 +10,8 @@
 ; Configuration for Balanced Family related contributions
 [includeIf "gitdir:BalancedFamily/"]
   path = ~/.gitconfig_balanced.family
+; Configuration for Trana related contributions
+[includeIf "gitdir:Trana-Gmbh/"]
+  path = ~/.gitconfig_trana
 [init]
 	defaultBranch = main
