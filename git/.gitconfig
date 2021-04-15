@@ -15,3 +15,5 @@
   path = ~/.gitconfig_trana
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
