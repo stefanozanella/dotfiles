@@ -1,6 +1,16 @@
+if [[ -d "/opt/homebrew" ]]
+then
+  homebrew_prefix=/opt/homebrew
+  eval "$(${homebrew_prefix}/bin/brew shellenv)"
+  # TODO This doesn't work :(
+  export DYLD_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_LIBRARY_PATH
+else
+  homebrew_prefix="/usr/local"
+fi
+
 ## Hook in chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source ${homebrew_prefix}/share/chruby/chruby.sh
+source ${homebrew_prefix}/share/chruby/auto.sh
 
 ## Eh...
 alias vi='vim'
@@ -59,6 +69,11 @@ __ruby() {
   echo "%F{161}${version:-system}%f" 
 }
 
+__node() {
+  version=$(node -v)
+  echo "%F{161}${version:-N/A}%f"
+}
+
 __git_branch() {
   ref=$(git symbolic-ref --short HEAD 2> /dev/null)
 
@@ -106,15 +121,16 @@ __git_status() {
   echo "%F{$staging_color}%{✈︎%G%}%f %F{236}∙%f %F{$edit_color}•%f"
 }
 
-RPROMPT=' $(__ruby) %F{236}∙%f $(__last_exit_status)'
+RPROMPT=' $(__ruby) %F{236}∙%f $(__node) %F{236}∙%f $(__last_exit_status)'
 PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{195}%~ %{⇢%G%}%f  '
 
+## Go
 export GOPATH=~/code/go
 export PATH=$PATH:$GOPATH/bin
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+. "${homebrew_prefix}/opt/nvm/nvm.sh"
 
 # Automatically load correct node version when .nvmrc is found
 autoload -U add-zsh-hook
@@ -138,6 +154,7 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+## Direnv
 eval "$(direnv hook zsh)"
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
