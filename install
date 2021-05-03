@@ -1,7 +1,19 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 
 stow=`which stow`
+
+if [[ $? -ne 0 ]]
+then
+  echo "Installing stow"
+
+  # This is probably the first time the script is run, so better make sure brew is in PATH
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  brew install stow
+  stow=`which stow`
+fi
+
 stow_root=`dirname $0`
 stow_pkgs=`find ${stow_root} -type d -depth 1 -not -name ".*" -exec basename {} \;`
 
