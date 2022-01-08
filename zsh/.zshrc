@@ -3,7 +3,7 @@ then
   homebrew_prefix=/opt/homebrew
   eval "$(${homebrew_prefix}/bin/brew shellenv)"
   # TODO This doesn't work :(
-  export DYLD_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_LIBRARY_PATH
+  export DYLD_LIBRARY_PATH=/opt/homebrew/lib/:${DYLD_LIBRARY_PATH}
 else
   homebrew_prefix="/usr/local"
 fi
@@ -132,6 +132,9 @@ export PATH=$PATH:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"
 . "${homebrew_prefix}/opt/nvm/nvm.sh"
 
+## Java from Homebrew for CLI tools & co.
+export PATH="${homebrew_prefix}/opt/openjdk/bin:$PATH"
+
 # Automatically load correct node version when .nvmrc is found
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -159,8 +162,14 @@ eval "$(direnv hook zsh)"
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# The next line updates PATH for the Google Cloud SDK.
+# The next lines update PATH for the Google Cloud SDK, depending on its location.
 if [ -f '/Users/stefano/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/stefano/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
+# The next lines enable shell command completion for gcloud, depending on its
+# location.
 if [ -f '/Users/stefano/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/stefano/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+
+# PyEnv
+eval "$(pyenv init -)"
