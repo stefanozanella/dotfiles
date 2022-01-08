@@ -172,4 +172,5 @@ if [ -f '/Users/stefano/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/s
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 # PyEnv
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
