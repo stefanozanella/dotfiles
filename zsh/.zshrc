@@ -49,6 +49,8 @@ export GREP_OPTIONS=--color=auto
 bindkey -e
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
 # TODO: forward search, move between words, set word separators
 
 ## Prompt
@@ -174,3 +176,7 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/complet
 # PyEnv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
