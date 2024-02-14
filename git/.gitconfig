@@ -13,6 +13,9 @@
 ; Configuration for Trana related contributions
 [includeIf "gitdir:Trana-Gmbh/"]
   path = ~/.gitconfig_trana
+; Configuration for acto related contributions
+[includeIf "gitdir:getacto/"]
+  path = ~/.gitconfig_acto
 [init]
 	defaultBranch = main
 [pull]
