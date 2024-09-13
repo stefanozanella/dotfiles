@@ -124,7 +124,7 @@ __git_status() {
 }
 
 RPROMPT=' $(__ruby) %F{236}∙%f $(__node) %F{236}∙%f $(__last_exit_status)'
-PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{195}%~ %{⇢%G%}%f  '
+PROMPT='$(__git_status) %F{236}∙%f $(__git_branch) %F{236}∙%f %F{200}%~ %{⇢%G%}%f  '
 
 ## Go
 export GOPATH=~/code/go
@@ -178,5 +178,8 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+export SDKMAN_DIR=${HOME}/.sdkman
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
