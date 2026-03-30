@@ -1,6 +1,0 @@
-[user]
-  name = Stefano Zanella
-  email = stefano@heyacto.com
-  signingkey = 56554AE6
-[commit]
-  gpgsign = true

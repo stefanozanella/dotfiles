@@ -1,6 +1,0 @@
-[user]
-  name = Stefano Zanella
-  email = stefano@trana.co
-  signingkey = 52AF5BB1
-[commit]
-  gpgsign = true

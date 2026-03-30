@@ -1,0 +1,6 @@
+[user]
+  name = Stefano Zanella
+  email = stefano.zanella@pandata.de
+  signingkey = 6FD8CFF9
+[commit]
+  gpgsign = true
