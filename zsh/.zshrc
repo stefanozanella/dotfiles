@@ -181,5 +181,19 @@ eval "$(pyenv init -)"
 export SDKMAN_DIR=${HOME}/.sdkman
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+#. /opt/homebrew/opt/asdf/libexec/asdf.sh
+#source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/stefano/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/stefano/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+export LANG="en_US.UTF-8"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
